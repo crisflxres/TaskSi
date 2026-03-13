@@ -1,0 +1,9 @@
+# Entorno virtual
+TaskSi/
+
+# Archivos temporales de Python
+__pycache__/
+*.py[cod]
+
+# Entorno de VS Code
+.vscode/
