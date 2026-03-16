@@ -43,7 +43,7 @@ def obtener_tareas():
     #Convertir las filas de la BD en una lista de diccionarios
     filas = cursor.fetchall()
     lista_tareas = [dict(fila) for fila in filas]
-    conexion.close
+    conexion.close()
     return jsonify({"tareas": lista_tareas, "total": len(lista_tareas)})
 
 #Registrar
@@ -51,7 +51,7 @@ def obtener_tareas():
 def agregar_tarea():
     nuevo = request.json
     titulo = nuevo.get('titulo')
-    descripcion = nuevo.get('descripcion')
+    descripcion = nuevo.get('descripcion',"")
     completada = nuevo.get('completada', False)
     
     #Validar que almenos este el titulo
@@ -70,7 +70,7 @@ def agregar_tarea():
         
         conexion.commit()
         nuevo_id = cursor.lastrowid #Id generado por la BD
-        conexion.close
+        conexion.close()
         
         return jsonify({
             "mensaje": "Tarea agregada",
@@ -141,4 +141,3 @@ def eliminar_tarea(id):
 
 if __name__ == '__main__':
     app.run(debug=True)
-#Prueba de API

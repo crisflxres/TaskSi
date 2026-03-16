@@ -1,9 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es"> 
 <head>
-    <title>Document</title>
+    <meta charset="UTF-8">
+    <title>TaskSi APIs</title>   
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="header-row">
+            <h2>Gestor de Tareas</h2>
+            <span class="logo-text">TaskSi</span>
+        </div>
     
+        <div class="search-section">
+            <input type="text" id="searchBar" placeholder="Buscar" onkeyup="filterTasks()">
+        </div>
+
+        <div class="input-group">
+            <input type="text" id="taskTitle" placeholder="Titulo">
+            <input type="text" id="taskDescription" placeholder="Descripción">
+        </div>
+
+        <div class="action-row">
+            <button class="btn-add" onclick="addTask()">Agregar Tarea</button>
+        </div>
+
+        <ul id="taskList"></ul>
+    </div>
+    <script src="script.js"></script>
 </body>
-    </html>
+</html>
